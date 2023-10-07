@@ -34,6 +34,15 @@ class FireBaseService
             return throw new Exception($error->getMessage());
         } 
     }
+
+    public function delete($data)
+    {
+        try{
+            $this->database->getReference('report')->removeChildren($data);
+        }catch (Exception $error) {
+            return throw new Exception($error->getMessage());
+        } 
+    }
 }
 
 

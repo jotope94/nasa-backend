@@ -28,14 +28,15 @@ class FireController extends Controller
     public function createRegister(Request $request)
     {
         try{
-            $data = [
+             $data = [
                 'long'     => $request->get('lng'),
                 'lat'      => $request->get('lat'),
                 'report'   => $request->get('reportBy'),
                 'severit'  => $request->get('fireSeverity'),
-                'risk'     => $request->get('riskInNeighbourhood')
+                'risk'     => $request->get('riskInNeighbourhood'),
+                'date'     => $request->get('date')
             ];
-            
+
             $this->fireBaseService->create($data);
             return Response::json('sucesso',200);
         } catch (Exception $error) {
@@ -51,6 +52,17 @@ class FireController extends Controller
             return Response::json($error->getMessage(),400);
         }
     }
+
+    /*
+    public function deleteRegister()
+    {
+        try{
+            return Response::json($this->fireBaseService->delete());
+        } catch (Exception $error) {
+            return Response::json($error->getMessage(),400);
+        }
+    }
+    */
 }
 
 
