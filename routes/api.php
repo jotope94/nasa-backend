@@ -18,4 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('create', 'App\Http\Controllers\FirebaseAuthController@create');
+Route::post('create', 'App\Http\Controllers\FirebaseAuthController@createRegister');
+Route::get('get', 'App\Http\Controllers\FirebaseAuthController@getRegister');

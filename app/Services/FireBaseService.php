@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Kreait\Laravel\Firebase\Facades\Firebase;
+use Exception;
 
 class FireBaseService
 {
@@ -15,29 +16,23 @@ class FireBaseService
         $this->database = app('firebase.database');
     }
 
-    public function create(Request $request)
+    public function create($data)
     {
-
-        $this->database->getReference('report')
-        ->push([
-            'amount'=>505,
-            'currency'=>'$',
-            'payment_method'=>'paypal5'
-        ]);
-
-        $this->database->getReference('report')
-            ->push([
-                'amount'=>506,
-                'currency'=>'$',
-                'payment_method'=>'paypal6'
-            ]);
-
-        dd($this->database->getReference('report')->getValue());
+        try {
+            $this->database->getReference('report')
+        ->push($data);
+        }catch (Exception $error) {
+            return throw new Exception($error->getMessage());
+        } 
     }
 
     public function get()
     {
-        return Response::json($this->database->getReference('report')->getValue());
+        try{
+            return $this->database->getReference('report')->getValue();
+        }catch (Exception $error) {
+            return throw new Exception($error->getMessage());
+        } 
     }
 }
 

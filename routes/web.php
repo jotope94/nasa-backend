@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('teste', 'App\Http\Controllers\FirebaseAuthController@teste');
+Route::get('teste', 'App\Http\Controllers\FireController@getRegister');
