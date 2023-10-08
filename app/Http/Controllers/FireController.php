@@ -29,12 +29,12 @@ class FireController extends Controller
     {
         try{
              $data = [
-                'long'     => $request->get('lng'),
-                'lat'      => $request->get('lat'),
-                'report'   => $request->get('reportBy'),
-                'severit'  => $request->get('fireSeverity'),
-                'risk'     => $request->get('riskInNeighbourhood'),
-                'date'     => $request->get('date')
+                'lng'                 => $request->get('lng'),
+                'lat'                 => $request->get('lat'),
+                'reportBy'            => $request->get('reportBy'),
+                'fireSeverity'        => $request->get('fireSeverity'),
+                'riskInNeighbourhood' => $request->get('riskInNeighbourhood'),
+                'date'                => $request->get('date')
             ];
 
             $this->fireBaseService->create($data);
