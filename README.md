@@ -1,3 +1,5 @@
+<img src="/assets/logo-black.png">
+
 # NASA Hackathon Backend Project
 
 This project is one part of the larger NASA Hackathon project.
@@ -43,4 +45,4 @@ To use this project, Docker and Docker Compose are required. Installing the proj
 
 ## Authors
 
-- [@jotope94](https://github.com/jotope94)
+- [João Vitor de Lima Perez](https://github.com/jotope94)
