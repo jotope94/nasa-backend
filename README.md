@@ -1,4 +1,4 @@
-<img src="/assets/logo-black.png">
+<img src="/public/assets/logo-black.png">
 
 # NASA Hackathon Backend Project
 
